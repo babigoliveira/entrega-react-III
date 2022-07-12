@@ -1,0 +1,24 @@
+.skills-title {
+  color: #a552ce;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.main {
+  margin: 5%;
+}
+
+.card-list {
+  padding-bottom: 1rem;
+  background-color: #a552ce;
+  border: 3px solid #5c1e7c;
+  border-radius: 10px;
+}
+
+@media screen and (min-width: 769px) {
+  .card-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+}

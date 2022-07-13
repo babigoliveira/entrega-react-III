@@ -24,7 +24,7 @@ h2 {
   padding: 12px 24px;
   border-radius: 8px;
   height: 100px;
-  width: 70%;
+  width: 300px;
 }
 
 button {
@@ -71,4 +71,10 @@ main {
 .list-items li div p {
   font-size: 1.3em;
   color: #111;
+}
+
+@media screen and (min-width: 550px) {
+  .input-comment {
+    width: 70%;
+  }
 }

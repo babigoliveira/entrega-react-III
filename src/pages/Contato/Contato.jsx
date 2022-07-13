@@ -1,5 +1,6 @@
 import Header from "../../components/Header/Header"
 import image from "../../assets/contact.svg"
+import Form from "../Contato/Form/Form"
 import Footer from "../../components/Footer/Footer"
 
 
@@ -12,6 +13,7 @@ function Contato() {
             >
                 Contato:
             </Header>
+            <Form />
             <Footer />
         </>
     )

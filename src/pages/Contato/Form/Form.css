@@ -1,0 +1,28 @@
+.inputs-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inputs {
+  height: 50px;
+  margin: 0.5rem 0;
+}
+
+.textarea {
+  margin: 0.5rem 0;
+}
+
+button {
+  border-radius: 8px;
+  border: 0;
+  color: #fff;
+  padding: 14px;
+}
+
+.submit {
+  background: #a552ce;
+  width: 300px;
+  margin-top: 1.2rem;
+  margin-bottom: 100px;
+}

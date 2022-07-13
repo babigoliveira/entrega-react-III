@@ -19,9 +19,8 @@ h2 {
   gap: 10px;
 }
 
-input {
-  background: #fff;
-  border: 0.5 solid #686aac;
+.input-comment {
+  border: 0.5 solid #a552ce;
   padding: 12px 24px;
   border-radius: 8px;
   height: 100px;
@@ -41,7 +40,7 @@ button {
 }
 
 .add-task {
-  background: #686aac;
+  background: #a552ce;
   width: 300px;
 }
 

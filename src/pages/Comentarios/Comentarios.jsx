@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import Header from '../../components/Header/Header'
 import { FiTrash2, FiPlus } from 'react-icons/fi'
-
 import image from '../../assets/appreciation.svg'
+import Footer from "../../components/Footer/Footer"
 import './comentarios.css'
 
 function Comentarios() {
@@ -51,7 +51,7 @@ function Comentarios() {
             <section className="list">
                 <header>
                     <div className="input-container">
-                        <input
+                        <input className="input-comment"
                             type="text"
                             placeholder="Digite aqui"
                             onChange={(e) => setNewItem(e.target.value)}
@@ -91,6 +91,7 @@ function Comentarios() {
                     </ul>
                 </main>
             </section>
+            <Footer />
         </>
 
     )

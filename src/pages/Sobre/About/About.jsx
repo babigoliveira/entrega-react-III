@@ -21,9 +21,6 @@ function About() {
           </p>
         </div>
       </div>
-      <div className="line">
-        <hr />
-      </div>
     </>
   );
 }

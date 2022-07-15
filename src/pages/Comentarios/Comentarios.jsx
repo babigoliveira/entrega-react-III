@@ -1,100 +1,95 @@
-import { useState, useEffect } from 'react'
-import Header from '../../components/Header/Header'
-import { FiTrash2, FiPlus } from 'react-icons/fi'
-import image from '../../assets/appreciation.svg'
-import Footer from "../../components/Footer/Footer"
-import './comentarios.css'
+import { useState, useEffect } from "react";
+import Header from "../../components/Header/Header";
+import { FiTrash2, FiPlus } from "react-icons/fi";
+import image from "../../assets/appreciation.svg";
+import Footer from "../../components/Footer/Footer";
+import "./Comentarios.css";
 
 function Comentarios() {
-    const getLocalList = () => {
-        let items = localStorage.getItem('list')
-        if (items) {
-            return JSON.parse(localStorage.getItem('list'))
-        } else {
-            return []
-        }
+  const getLocalList = () => {
+    let items = localStorage.getItem("list");
+    if (items) {
+      return JSON.parse(localStorage.getItem("list"));
+    } else {
+      return [];
     }
-    const [list, setList] = useState(getLocalList)
-    const [newItem, setNewItem] = useState('')
+  };
+  const [list, setList] = useState(getLocalList);
+  const [newItem, setNewItem] = useState("");
 
-    function handleCreateNewItem() {
-        const item = {
-            id: Math.random(),
-            title: newItem
-        }
+  function handleCreateNewItem() {
+    const item = {
+      id: Math.random(),
+      title: newItem,
+    };
 
-        if (item.title === '') {
-            return
-        }
-
-        setList([...list, item])
-        setNewItem('')
+    if (item.title === "") {
+      return;
     }
 
-    function handleRemoveItem(id) {
-        const itemsFiltered = list.filter(item => item.id !== id)
-        setList(itemsFiltered)
-    }
+    setList([...list, item]);
+    setNewItem("");
+  }
 
-    useEffect(() => {
-        localStorage.setItem('list', JSON.stringify(list))
-    }, [list])
+  function handleRemoveItem(id) {
+    const itemsFiltered = list.filter((item) => item.id !== id);
+    setList(itemsFiltered);
+  }
 
-    return (
-        <>
-            <Header
-                image={image}
-                description="ilustracao mulher com coração"
-            >
-                Dicas, feedbacks e mensagens do coração
-            </Header>
-            <section className="list">
-                <header>
-                    <div className="input-container">
-                        <input className="input-comment"
-                            type="text"
-                            placeholder="Digite aqui"
-                            onChange={(e) => setNewItem(e.target.value)}
-                            value={newItem}
-                        />
-                        <div className="add-container">
-                            <button
-                                className="add-task"
-                                type="submit"
-                                onClick={handleCreateNewItem}
-                            >
-                                <FiPlus size={16} color="#fff" />
-                            </button>
-                        </div>
-                    </div>
-                </header>
-                <main>
-                    <ul className="list-items">
-                        {
-                            list.map(item => {
-                                return (
-                                    <li key={item.id}>
-                                        <div>
-                                            <p>{item.title}</p>
-                                        </div>
-                                        <button
-                                            className="remove-task"
-                                            type="button"
-                                            onClick={() => handleRemoveItem(item.id)}
-                                        >
-                                            <FiTrash2 size={16} />
-                                        </button>
-                                    </li>
-                                )
-                            })
-                        }
-                    </ul>
-                </main>
-            </section>
-            <Footer />
-        </>
+  useEffect(() => {
+    localStorage.setItem("list", JSON.stringify(list));
+  }, [list]);
 
-    )
+  return (
+    <>
+      <Header image={image} description="ilustracao mulher com coração">
+        Dicas, feedbacks e mensagens do coração
+      </Header>
+      <section className="list">
+        <header>
+          <div className="input-container">
+            <input
+              className="input-comment"
+              type="text"
+              placeholder="Digite aqui"
+              onChange={(e) => setNewItem(e.target.value)}
+              value={newItem}
+            />
+            <div className="add-container">
+              <button
+                className="add-task"
+                type="submit"
+                onClick={handleCreateNewItem}
+              >
+                <FiPlus size={16} color="#fff" />
+              </button>
+            </div>
+          </div>
+        </header>
+        <main>
+          <ul className="list-items">
+            {list.map((item) => {
+              return (
+                <li key={item.id}>
+                  <div>
+                    <p>{item.title}</p>
+                  </div>
+                  <button
+                    className="remove-task"
+                    type="button"
+                    onClick={() => handleRemoveItem(item.id)}
+                  >
+                    <FiTrash2 size={16} />
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+        </main>
+      </section>
+      <Footer />
+    </>
+  );
 }
 
-export default Comentarios
+export default Comentarios;

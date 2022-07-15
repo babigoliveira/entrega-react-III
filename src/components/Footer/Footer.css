@@ -8,6 +8,10 @@
   align-items: center;
 }
 
+a{
+  text-decoration: none;
+}
+
 span {
   color: #d189f5;
   padding-left: 3px;

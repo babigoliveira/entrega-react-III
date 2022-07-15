@@ -5,7 +5,7 @@ function Footer() {
     <h3 className="footer">
       Feito por{" "}
       <a href="https://babiport.herokuapp.com/" target="_blank">
-        <span>Bárbara Oliveira</span>
+        <span> Bárbara Oliveira </span>
       </a>
     </h3>
   );
